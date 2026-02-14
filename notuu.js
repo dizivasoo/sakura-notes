@@ -182,16 +182,6 @@ function updateChart() {
     });
 }
 
-/* --- PWA & Install Logic --- */
-
-if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-        navigator.serviceWorker.register("service-worker.js")
-            .then(() => console.log("SW Registered"))
-            .catch(err => console.log("SW Failed", err));
-    });
-}
-
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
@@ -213,4 +203,13 @@ window.addEventListener('appinstalled', () => {
 
 // Initial Setup
 renderNotes();
+
 updateChart();
+
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("service-worker.js")
+      .then(() => console.log("Service Worker Registered"));
+  });
+}
