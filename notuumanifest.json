@@ -1,27 +1,21 @@
 {
+  "name": "Anime Notes",
   "short_name": "AnimeNotes",
-  "name": "🌸 Anime Notes: Cute Thoughts",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#1f1f2e",
+  "theme_color": "#ff7eb3",
+  "orientation": "portrait",
   "icons": [
-    {
-  "icons": [
-    {
-      "src": "512notuu.png", 
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
     {
       "src": "192notuu.png",
       "sizes": "192x192",
       "type": "image/png"
+    },
+    {
+      "src": "512notuu.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ]
-}
-  ],
-  "start_url": "notuu.html",
-  "background_color": "#ffe6f2",
-  "display": "standalone",
-  "scope": "/",
-  "theme_color": "#ff7eb3",
-  "description": "A cute anime-themed note taking app."
 }
