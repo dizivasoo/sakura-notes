@@ -1,26 +1,27 @@
-const cacheName = 'anime-notes-v1';
+const CACHE_NAME = "anime-notes-v1";
+
 const assets = [
-  './',
-  './notuu.html',
-  './notuu.css',
-  './notuu.js',
-  'https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap'
+  "/",
+  "index.html",
+  "notuu.css",
+  "notuu.js",
+  "notuumanifest.json",
+  "192notuu.png",
+  "512notuu.png"
 ];
 
-// Install Service Worker
-self.addEventListener('install', e => {
+self.addEventListener("install", e => {
   e.waitUntil(
-    caches.open(cacheName).then(cache => {
-      cache.addAll(assets);
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(assets);
     })
   );
 });
 
-// Fetching assets
-self.addEventListener('fetch', e => {
+self.addEventListener("fetch", e => {
   e.respondWith(
-    caches.match(e.request).then(res => {
-      return res || fetch(e.request);
+    caches.match(e.request).then(response => {
+      return response || fetch(e.request);
     })
   );
 });
